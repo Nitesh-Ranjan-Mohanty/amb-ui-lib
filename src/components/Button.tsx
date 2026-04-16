@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { spacing, SpacingKey } from '../tokens/layout';
+import { colors, spacing, SpacingKey } from '../tokens/layout';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';
 export type ButtonSize = 'sm' | 'md' | 'lg';
@@ -15,23 +15,23 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
   primary: {
-    backgroundColor: '#2563eb',
-    color: '#ffffff',
+    backgroundColor: colors.primary,
+    color: colors.primaryText,
     border: '1px solid transparent'
   },
   secondary: {
-    backgroundColor: '#f8fafc',
-    color: '#0f172a',
-    border: '1px solid #cbd5e1'
+    backgroundColor: colors.surface,
+    color: colors.text,
+    border: `1px solid ${colors.border}`
   },
   ghost: {
     backgroundColor: 'transparent',
-    color: '#0f172a',
+    color: colors.text,
     border: '1px solid transparent'
   },
   danger: {
-    backgroundColor: '#dc2626',
-    color: '#ffffff',
+    backgroundColor: colors.danger,
+    color: colors.primaryText,
     border: '1px solid transparent'
   }
 };

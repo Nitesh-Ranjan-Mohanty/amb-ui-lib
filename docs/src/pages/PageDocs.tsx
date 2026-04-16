@@ -130,11 +130,17 @@ function PageDocs() {
           <Section>
             <Heading level={2}>API Reference</Heading>
             
-            <Heading level={3} style={{ marginTop: '24px' }}>Page Props</Heading>
-            <PropTable props={pageProps} />
+            <Stack gap="lg">
+              <div>
+                <Heading level={3}>Page Props</Heading>
+                <PropTable props={pageProps} />
+              </div>
 
-            <Heading level={3} style={{ marginTop: '32px' }}>Slot Props (Header, Body, Footer)</Heading>
-            <PropTable props={subComponentProps} />
+              <div>
+                <Heading level={3}>Slot Props (Header, Body, Footer)</Heading>
+                <PropTable props={subComponentProps} />
+              </div>
+            </Stack>
           </Section>
         </Stack>
       </Page.Body>

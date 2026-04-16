@@ -1,4 +1,4 @@
-import { Heading, Page, Section, Stack, Text } from '@amb-ui';
+import { Heading, Page, Row, Section, Stack, Text } from '@amb-ui';
 import { Note, LiveExample } from '../components/DocComponents';
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
         <div className="section-header">
           <Heading level={1}>Introduction</Heading>
           <Text size="lg">
-            A minimalist, performance-focused typography library for building high-quality React interfaces.
+            A minimalist, performance-focused UI library for building high-quality React interfaces.
           </Text>
         </div>
       </Page.Header>
@@ -18,19 +18,19 @@ export default function Home() {
           <Section>
             <Heading level={2}>Core Philosophy</Heading>
             <Text>
-              @amb/ui-lib is designed to provide a solid foundation for your application's visual hierarchy. 
-              Instead of scattering font sizes and weights throughout your CSS, we provide a curated set of 
-              semantic roles and a fixed scale.
+              amb-ui-lib is designed to provide a solid foundation for your application's layout and typography. 
+              Instead of scattering random styles throughout your CSS, we provide a curated set of 
+              layout primitives and semantic typography roles.
             </Text>
             
             <div className="role-grid">
               <div className="role-card">
-                <Heading level={4}>Consistent Scale</Heading>
-                <Text size="sm">A 1.25x major third scale ensures that typography sizes feel balanced and intentional.</Text>
+                <Heading level={4}>Layout Primitives</Heading>
+                <Text size="sm">Stack, Row, and Grid components provide structured spacing and alignment without custom CSS.</Text>
               </div>
               <div className="role-card">
-                <Heading level={4}>Semantic Intent</Heading>
-                <Text size="sm">Use roles like Display, Heading, and Body to convey meaning rather than just appearance.</Text>
+                <Heading level={4}>Consistent Scale</Heading>
+                <Text size="sm">A 1.25x major third scale ensures that typography and spacing feel balanced and intentional.</Text>
               </div>
               <div className="role-card">
                 <Heading level={4}>Type Safety</Heading>
@@ -44,28 +44,30 @@ export default function Home() {
             <Note title="Local Development">
               This documentation is currently running against the local source code, allowing for real-time testing of library changes.
             </Note>
-            <LiveExample code={`npm install @amb/ui-lib`}>
-              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <LiveExample code={`npm install amb-ui-lib`}>
+              <Row gap="sm" align="center">
                 <span style={{ fontSize: '24px' }}>📦</span>
                 <Text weight="semibold">Ready to get started?</Text>
-              </div>
+              </Row>
             </LiveExample>
           </Section>
 
           <Section>
             <Heading level={2}>Quick Start</Heading>
             <Text>
-              Wrap your application or sections with the provided typography primitives to start using the system.
+              Wrap your application or sections with the provided primitives to start using the system.
             </Text>
             <pre className="example-code">
-              <code>{`import { Heading, Text, Stack } from '@amb/ui-lib';
+              <code>{`import { Container, Heading, Stack, Text } from 'amb-ui-lib';
 
 function App() {
   return (
-    <Stack gap="md">
-      <Heading level={1}>Hello World</Heading>
-      <Text>Welcome to my new app.</Text>
-    </Stack>
+    <Container maxWidth="lg" padding="md">
+      <Stack gap="md">
+        <Heading level={1}>Hello World</Heading>
+        <Text>Welcome to my new app.</Text>
+      </Stack>
+    </Container>
   );
 }`}</code>
             </pre>

@@ -11,6 +11,7 @@ import {
   FontWeightKey,
   LetterSpacingKey
 } from '../tokens/typography';
+import { colors } from '../tokens/layout';
 
 export interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
   variant?: TypographyVariant;
@@ -43,6 +44,7 @@ const Typography = forwardRef<HTMLElement, TypographyProps>(function Typography(
   const baseStyle = variantStyles[variant];
   const computedStyle: React.CSSProperties = {
     margin: 0,
+    color: colors.text,
     fontFamily: baseStyle.fontFamily,
     fontSize: fontSizes[size ?? baseStyle.size],
     lineHeight: lineHeight ?? baseStyle.lineHeight,

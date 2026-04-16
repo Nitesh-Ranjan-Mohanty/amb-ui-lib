@@ -1,4 +1,4 @@
-import { Button, Heading, Page, Section, Stack, Text } from '@amb-ui';
+import { Button, Heading, Page, Row, Section, Stack, Text } from '@amb-ui';
 import { LiveExample, PropTable } from '../components/DocComponents';
 
 const buttonProps = [
@@ -44,18 +44,41 @@ export default function ButtonDocs() {
             <Text>
               Use variants to communicate the importance of an action.
             </Text>
-            <LiveExample code={`<Stack direction="row" gap="md">
+            <LiveExample code={`<Row gap="md" align="center">
   <Button variant="primary">Primary</Button>
   <Button variant="secondary">Secondary</Button>
   <Button variant="ghost">Ghost</Button>
   <Button variant="danger">Danger</Button>
-</Stack>`}>
-              <Stack direction="row" gap="md" wrap>
+</Row>`}>
+              <Row gap="md" align="center">
                 <Button variant="primary">Primary</Button>
                 <Button variant="secondary">Secondary</Button>
                 <Button variant="ghost">Ghost</Button>
                 <Button variant="danger">Danger</Button>
-              </Stack>
+              </Row>
+            </LiveExample>
+          </Section>
+
+          <Section>
+            <Heading level={2}>Layout with Row</Heading>
+            <Text>
+              Use <code>Row</code> for horizontal spacing and alignment instead of ad hoc inline flex wrappers.
+            </Text>
+            <LiveExample code={`// Before
+<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16 }}>
+  <Button>Save</Button>
+  <Button variant="secondary">Cancel</Button>
+</div>
+
+// After
+<Row gap="sm" align="center" justify="between">
+  <Button>Save</Button>
+  <Button variant="secondary">Cancel</Button>
+</Row>`}>
+              <Row gap="sm" align="center" justify="between">
+                <Button>Save</Button>
+                <Button variant="secondary">Cancel</Button>
+              </Row>
             </LiveExample>
           </Section>
 
@@ -64,16 +87,16 @@ export default function ButtonDocs() {
             <Text>
               Buttons come in three sizes to fit different contexts.
             </Text>
-            <LiveExample code={`<Stack direction="row" align="center" gap="md">
+            <LiveExample code={`<Row gap="md" align="center">
   <Button size="sm">Small</Button>
   <Button size="md">Medium</Button>
   <Button size="lg">Large</Button>
-</Stack>`}>
-              <Stack direction="row" align="center" gap="md" wrap>
+</Row>`}>
+              <Row gap="md" align="center">
                 <Button size="sm">Small</Button>
                 <Button size="md">Medium</Button>
                 <Button size="lg">Large</Button>
-              </Stack>
+              </Row>
             </LiveExample>
           </Section>
 
@@ -82,14 +105,14 @@ export default function ButtonDocs() {
             <Text>
               Visual feedback for different interaction states.
             </Text>
-            <LiveExample code={`<Stack direction="row" gap="md">
+            <LiveExample code={`<Row gap="md" align="center">
   <Button loading>Loading...</Button>
   <Button disabled>Disabled</Button>
-</Stack>`}>
-              <Stack direction="row" gap="md" wrap>
+</Row>`}>
+              <Row gap="md" align="center">
                 <Button loading>Loading...</Button>
                 <Button disabled>Disabled</Button>
-              </Stack>
+              </Row>
             </LiveExample>
           </Section>
 
@@ -98,14 +121,14 @@ export default function ButtonDocs() {
             <Text>
               Enhance buttons with icons to provide visual cues.
             </Text>
-            <LiveExample code={`<Stack direction="row" gap="md">
+            <LiveExample code={`<Row gap="md" align="center">
   <Button leftIcon={<PlusIcon />}>Create Item</Button>
   <Button rightIcon={<ArrowRightIcon />} variant="secondary">Next Step</Button>
-</Stack>`}>
-              <Stack direction="row" gap="md" wrap>
+</Row>`}>
+              <Row gap="md" align="center">
                 <Button leftIcon={<PlusIcon />}>Create Item</Button>
                 <Button rightIcon={<ArrowRightIcon />} variant="secondary">Next Step</Button>
-              </Stack>
+              </Row>
             </LiveExample>
           </Section>
 

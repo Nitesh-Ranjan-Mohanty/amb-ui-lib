@@ -3,8 +3,11 @@ import ButtonDocs from './pages/ButtonDocs';
 import CardDocs from './pages/CardDocs';
 import Home from './pages/Home';
 import GridDocs from './pages/GridDocs';
+import LayoutDocs from './pages/LayoutDocs';
 import PageDocs from './pages/PageDocs';
 import TypographyDocs from './pages/TypographyDocs';
+import DesignTokens from './pages/DesignTokens';
+import FormDocs from './pages/FormDocs';
 
 const pageMap = {
   home: {
@@ -16,6 +19,11 @@ const pageMap = {
     title: 'Page',
     group: 'Layout Primitives',
     component: PageDocs
+  },
+  layout: {
+    title: 'Layout',
+    group: 'Layout Primitives',
+    component: LayoutDocs
   },
   grid: {
     title: 'Grid',
@@ -32,10 +40,20 @@ const pageMap = {
     group: 'Components',
     component: ButtonDocs
   },
+  form: {
+    title: 'Forms',
+    group: 'Components',
+    component: FormDocs
+  },
   typography: {
     title: 'Typography',
     group: 'Tokens & Primitives',
     component: TypographyDocs
+  },
+  tokens: {
+    title: 'Design Tokens',
+    group: 'Tokens & Primitives',
+    component: DesignTokens
   }
 } as const;
 

@@ -1,35 +1,28 @@
 import React, { forwardRef } from 'react';
 import { spacing, SpacingKey } from '../tokens/layout';
 
+export type StackAlign = 'start' | 'center' | 'end' | 'stretch';
+
 export interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
   gap?: SpacingKey;
-  align?: React.CSSProperties['alignItems'];
-  justify?: React.CSSProperties['justifyContent'];
-  direction?: 'column' | 'row';
-  wrap?: boolean;
+  align?: StackAlign;
 }
 
+const alignMap: Record<StackAlign, React.CSSProperties['alignItems']> = {
+  start: 'flex-start',
+  center: 'center',
+  end: 'flex-end',
+  stretch: 'stretch'
+};
+
 const Stack = forwardRef<HTMLDivElement, StackProps>(function Stack(
-  {
-    gap = 'md',
-    direction = 'column',
-    align = 'stretch',
-    justify = 'flex-start',
-    wrap = false,
-    style,
-    className,
-    children,
-    ...rest
-  },
-  ref
+  { gap = 'md', align = 'start', style, className, children, ...rest }, ref
 ) {
   const computedStyle: React.CSSProperties = {
     display: 'flex',
-    flexDirection: direction,
+    flexDirection: 'column',
     gap: spacing[gap],
-    alignItems: align,
-    justifyContent: justify,
-    flexWrap: wrap ? 'wrap' : 'nowrap',
+    alignItems: alignMap[align],
     ...style
   };
 

@@ -1,5 +1,6 @@
 import React, { forwardRef, useState } from 'react';
-import { spacing, radii, SpacingKey, RadiusKey } from '../tokens/layout';
+import { colors, spacing, radii, SpacingKey, RadiusKey } from '../tokens/layout';
+import Stack from './Stack';
 
 export type CardVariant = 'elevated' | 'outlined' | 'ghost';
 
@@ -15,13 +16,13 @@ export interface CardSectionProps extends React.HTMLAttributes<HTMLElement> {}
 
 const variantStyles: Record<CardVariant, React.CSSProperties> = {
   elevated: {
-    backgroundColor: '#ffffff',
+    backgroundColor: colors.surface,
     border: '1px solid transparent',
     boxShadow: '0 18px 60px rgba(15, 23, 42, 0.08)'
   },
   outlined: {
-    backgroundColor: '#ffffff',
-    border: '1px solid #e2e8f0',
+    backgroundColor: colors.surface,
+    border: `1px solid ${colors.border}`,
     boxShadow: 'none'
   },
   ghost: {
@@ -76,7 +77,7 @@ const Card = forwardRef<HTMLElement, CardProps>(function Card(
       onBlur={() => setFocused(false)}
       {...rest}
     >
-      {children}
+      <Stack gap="md">{children}</Stack>
     </Component>
   );
 });
@@ -86,7 +87,7 @@ const CardHeader = forwardRef<HTMLElement, CardSectionProps>(function CardHeader
   ref
 ) {
   return (
-    <header ref={ref as any} className={className} style={{ marginBottom: spacing.sm, ...style }} {...rest}>
+    <header ref={ref as any} className={className} style={style} {...rest}>
       {children}
     </header>
   );
@@ -108,7 +109,7 @@ const CardFooter = forwardRef<HTMLElement, CardSectionProps>(function CardFooter
   ref
 ) {
   return (
-    <footer ref={ref as any} className={className} style={{ marginTop: spacing.lg, ...style }} {...rest}>
+    <footer ref={ref as any} className={className} style={style} {...rest}>
       {children}
     </footer>
   );

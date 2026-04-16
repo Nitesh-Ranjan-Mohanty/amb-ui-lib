@@ -1,6 +1,6 @@
 # amb-ui-lib
 
-A small React UI library with typography and layout primitives.
+A minimalist, performance-focused React UI library with typography and layout primitives.
 
 ## Install
 
@@ -14,25 +14,32 @@ npm install amb-ui-lib
 import {
   Heading,
   Text,
-  Label,
-  Caption,
-  Container,
   Stack,
-  Section,
+  Row,
+  Button,
+  Card,
   Page,
 } from 'amb-ui-lib';
 
 export function Example() {
   return (
     <Page>
-      <Section>
-        <Container>
-          <Heading level={1}>Hero title</Heading>
-          <Text>Body text uses the same consistent scale and line-height rules.</Text>
-          <Label>Username</Label>
-          <Caption>Helper text or meta information.</Caption>
-        </Container>
-      </Section>
+      <Page.Header>
+        <Heading level={1}>Welcome</Heading>
+      </Page.Header>
+      <Page.Body>
+        <Stack gap="lg">
+          <Card>
+            <Card.Content>
+              <Text>This is a minimalist UI component system.</Text>
+            </Card.Content>
+          </Card>
+          <Row gap="md" align="center">
+            <Button variant="primary">Get Started</Button>
+            <Button variant="secondary">Learn More</Button>
+          </Row>
+        </Stack>
+      </Page.Body>
     </Page>
   );
 }
@@ -40,10 +47,12 @@ export function Example() {
 
 ## Features
 
-- React typography components: `Heading`, `Text`, `Label`, `Caption`
-- Layout primitives: `Container`, `Stack`, `Section`, `Page`
-- Tokenized styles for typography and layout
-- Built for React 19 with TypeScript support
+- **Typography**: `Heading`, `Text`, `Label`, `Caption`, and the base `Typography` primitive.
+- **Layout**: `Stack`, `Row`, `Grid`, `Container`, `Section`, and `Page` for structured, responsive layouts.
+- **Components**: Polished primitives like `Button` and `Card`.
+- **Tokenized**: Shared tokens for spacing, typography, and radii.
+- **Modern**: Built for React 19+ with full TypeScript support.
+- **Performant**: Minimal runtime overhead and small bundle size.
 
 ## Documentation site
 

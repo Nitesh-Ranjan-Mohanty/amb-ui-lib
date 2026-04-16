@@ -1,13 +1,26 @@
 import React, { forwardRef } from 'react';
 import Container from './Container';
 import Stack from './Stack';
+import { MaxWidthKey, SpacingKey } from '../tokens/layout';
 
 export interface PageProps extends React.HTMLAttributes<HTMLElement> {
   fullHeight?: boolean;
+  containerMaxWidth?: MaxWidthKey;
+  containerPadding?: SpacingKey;
+  containerCenter?: boolean;
 }
 
 const Page = forwardRef<HTMLElement, PageProps>(function Page(
-  { fullHeight = false, style, className, children, ...rest },
+  {
+    fullHeight = false,
+    containerMaxWidth = 'lg',
+    containerPadding = 'lg',
+    containerCenter = true,
+    style,
+    className,
+    children,
+    ...rest
+  },
   ref
 ) {
   const computedStyle: React.CSSProperties = {
@@ -20,7 +33,9 @@ const Page = forwardRef<HTMLElement, PageProps>(function Page(
 
   return (
     <main ref={ref} className={className} style={computedStyle} {...rest}>
-      <Container>{children}</Container>
+      <Container maxWidth={containerMaxWidth} padding={containerPadding} center={containerCenter}>
+        <Stack gap="lg">{children}</Stack>
+      </Container>
     </main>
   );
 });
@@ -30,12 +45,7 @@ const PageHeader = forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(fu
   ref
 ) {
   return (
-    <header
-      ref={ref as any}
-      className={className}
-      style={{ marginBottom: 24, ...style }}
-      {...rest}
-    >
+    <header ref={ref as any} className={className} style={style} {...rest}>
       {children}
     </header>
   );
@@ -57,12 +67,7 @@ const PageFooter = forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(fu
   ref
 ) {
   return (
-    <footer
-      ref={ref as any}
-      className={className}
-      style={{ marginTop: 32, ...style }}
-      {...rest}
-    >
+    <footer ref={ref as any} className={className} style={style} {...rest}>
       {children}
     </footer>
   );

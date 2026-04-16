@@ -13,10 +13,12 @@ const scale = [
 ];
 
 const typographyProps = [
-  { name: 'role', type: "'display' | 'heading' | 'title' | 'body' | 'label' | 'caption'", description: 'Semantic role of the text', default: "'body'" },
-  { name: 'size', type: "'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl'", description: 'Font size token', default: 'role-dependent' },
-  { name: 'weight', type: "'light' | 'normal' | 'medium' | 'semibold' | 'bold'", description: 'Font weight', default: "'normal'" },
-  { name: 'as', type: 'ElementType', description: 'The HTML element to render', default: 'div' },
+  { name: 'variant', type: "'display' | 'heading' | 'title' | 'body' | 'label' | 'caption'", description: 'The typographic variant to use.', default: "'body'" },
+  { name: 'size', type: "'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl'", description: 'Font size token', default: 'variant-dependent' },
+  { name: 'weight', type: "'normal' | 'medium' | 'semibold' | 'bold'", description: 'Font weight', default: "'normal'" },
+  { name: 'letterSpacing', type: "'tight' | 'normal' | 'wide'", description: 'Letter spacing token', default: 'variant-dependent' },
+  { name: 'lineHeight', type: 'number', description: 'Unitless line height multiplier', default: 'variant-dependent' },
+  { name: 'as', type: 'ElementType', description: 'The HTML element to render', default: 'span' },
 ];
 
 export default function TypographyDocs() {
@@ -67,7 +69,7 @@ export default function TypographyDocs() {
               We provide specific components for common typographic needs. These are built on top of the base <code>Typography</code> component.
             </Text>
 
-            <Stack gap="lg" style={{ marginTop: '24px' }}>
+            <Stack gap="lg">
               <div>
                 <Heading level={3}>Heading</Heading>
                 <Text>Used for page and section titles. Supports levels 1 through 6.</Text>
