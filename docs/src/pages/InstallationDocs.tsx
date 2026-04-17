@@ -64,8 +64,8 @@ function App() {
             <Heading level={2}>Theme support</Heading>
             <Text>Theme files are provided as scoped CSS modules under <code>amb-ui-lib/styles/themes/</code>.</Text>
             <pre className="example-code">
-              <code>{`import lightTheme from 'amb-ui-lib/styles/themes/one-light.module.css';
-import darkTheme from 'amb-ui-lib/styles/themes/one-dark.module.css';
+              <code>{`import lightTheme from 'amb-ui-lib/styles/themes/amb-light.module.css';
+import darkTheme from 'amb-ui-lib/styles/themes/amb-dark.module.css';
 
 function App({ isDark }) {
   return (

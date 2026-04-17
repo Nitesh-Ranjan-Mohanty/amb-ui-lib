@@ -68,8 +68,8 @@ export default function ThemingDocs() {
               To apply a theme, import the theme module and apply its <code>root</code> class to a high-level container (usually your <code>App</code> component).
             </Text>
             <pre className="example-code">
-              <code>{`import lightTheme from 'amb-ui-lib/styles/themes/one-light.module.css';
-import darkTheme from 'amb-ui-lib/styles/themes/one-dark.module.css';
+              <code>{`import lightTheme from 'amb-ui-lib/styles/themes/amb-light.module.css';
+import darkTheme from 'amb-ui-lib/styles/themes/amb-dark.module.css';
 
 function App() {
   const [theme, setTheme] = useState('light');
