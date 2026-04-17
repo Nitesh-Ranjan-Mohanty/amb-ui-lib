@@ -1,5 +1,6 @@
-import { Container, Heading, Page, Row, Section, Stack, Text } from '@amb-ui';
+import { Container, Heading, Page, Row, Section, Stack, Text, csx } from '@amb-ui';
 import { LiveExample, PropTable } from '../components/DocComponents';
+import styles from '../../../styles/utils/utils.module.css';
 
 const stackProps = [
   { name: 'gap', type: "'xs' | 'sm' | 'md' | 'lg' | 'xl'", description: 'Spacing between items.', default: "'md'" },
@@ -43,14 +44,14 @@ export default function LayoutDocs() {
               The <code>Stack</code> component is used to lay out items vertically with consistent spacing.
             </Text>
             <LiveExample code={`<Stack gap="md">
-  <div style={{ padding: '12px', background: '#e2e8f0', borderRadius: '4px' }}>Item 1</div>
-  <div style={{ padding: '12px', background: '#e2e8f0', borderRadius: '4px' }}>Item 2</div>
-  <div style={{ padding: '12px', background: '#e2e8f0', borderRadius: '4px' }}>Item 3</div>
+  <div className={styles.p3 + ' ' + styles.bgSurface50 + ' ' + styles.roundedLg}>Item 1</div>
+  <div className={styles.p3 + ' ' + styles.bgSurface50 + ' ' + styles.roundedLg}>Item 2</div>
+  <div className={styles.p3 + ' ' + styles.bgSurface50 + ' ' + styles.roundedLg}>Item 3</div>
 </Stack>`}>
-              <Stack gap="md" style={{ width: '100%' }}>
-                <div style={{ padding: '12px', background: '#e2e8f0', borderRadius: '4px' }}>Item 1</div>
-                <div style={{ padding: '12px', background: '#e2e8f0', borderRadius: '4px' }}>Item 2</div>
-                <div style={{ padding: '12px', background: '#e2e8f0', borderRadius: '4px' }}>Item 3</div>
+              <Stack gap="md" className={styles.wFull}>
+                <div className={csx(styles.p3, styles.bgSurface50, styles.roundedLg)}>Item 1</div>
+                <div className={csx(styles.p3, styles.bgSurface50, styles.roundedLg)}>Item 2</div>
+                <div className={csx(styles.p3, styles.bgSurface50, styles.roundedLg)}>Item 3</div>
               </Stack>
             </LiveExample>
             <PropTable props={stackProps} />
@@ -62,15 +63,37 @@ export default function LayoutDocs() {
               The <code>Row</code> component is used to lay out items horizontally with consistent spacing and alignment options.
             </Text>
             <LiveExample code={`<Row gap="lg" align="center" justify="between">
-  <div style={{ padding: '12px', background: '#e2e8f0', borderRadius: '4px' }}>Left</div>
-  <div style={{ padding: '12px', background: '#e2e8f0', borderRadius: '4px' }}>Right</div>
+  <div className={styles.p3 + ' ' + styles.bgSurface50 + ' ' + styles.roundedLg}>Left</div>
+  <div className={styles.p3 + ' ' + styles.bgSurface50 + ' ' + styles.roundedLg}>Right</div>
 </Row>`}>
-              <Row gap="lg" align="center" justify="between" style={{ width: '100%' }}>
-                <div style={{ padding: '12px', background: '#e2e8f0', borderRadius: '4px' }}>Left</div>
-                <div style={{ padding: '12px', background: '#e2e8f0', borderRadius: '4px' }}>Right</div>
+              <Row gap="lg" align="center" justify="between" className={styles.wFull}>
+                <div className={csx(styles.p3, styles.bgSurface50, styles.roundedLg)}>Left</div>
+                <div className={csx(styles.p3, styles.bgSurface50, styles.roundedLg)}>Right</div>
               </Row>
             </LiveExample>
             <PropTable props={rowProps} />
+          </Section>
+
+          <Section>
+            <Heading level={2}>Utility CSS Module</Heading>
+            <Text>
+              In addition to layout primitives, you can use the library's CSS utility module for class-based grid and spacing helpers.
+            </Text>
+            <pre className="example-code">
+              <code>{`import styles from 'amb-ui-lib/styles/utils.module.css';
+
+function Example() {
+  return (
+    <div className={styles.grid}>
+      <div className={styles.col}>Column 1</div>
+      <div className={styles.col}>Column 2</div>
+    </div>
+  );
+}`}</code>
+            </pre>
+            <Text>
+              This is useful for quick structural layouts where you want the benefits of utility classes without adding additional style definitions.
+            </Text>
           </Section>
 
           <Section>
@@ -79,12 +102,12 @@ export default function LayoutDocs() {
               The <code>Container</code> centers your content horizontally and limits its maximum width.
             </Text>
             <LiveExample code={`<Container maxWidth="md" padding="md">
-  <div style={{ padding: '24px', background: '#f1f5f9', border: '1px dashed #cbd5e1' }}>
+  <div className={styles.p6 + ' ' + styles.bgSurface50 + ' ' + styles.borderDashed + ' ' + styles.border200 + ' ' + styles.roundedLg}>
     Container content
   </div>
 </Container>`}>
-              <Container maxWidth="md" padding="md" style={{ border: '1px solid #e2e8f0' }}>
-                <div style={{ padding: '24px', background: '#f1f5f9', border: '1px dashed #cbd5e1', textAlign: 'center' }}>
+              <Container maxWidth="md" padding="md" className={csx(styles.borderSolid, styles.border200, styles.roundedLg)}>
+                <div className={csx(styles.p6, styles.bgSurface50, styles.borderDashed, styles.border200, styles.textCenter)}>
                   Container content
                 </div>
               </Container>
@@ -97,11 +120,11 @@ export default function LayoutDocs() {
             <Text>
               A simple block-level container with consistent padding. Useful for dividing pages into logical parts.
             </Text>
-            <LiveExample code={`<Section padding="xl" style={{ background: '#f8fafc' }}>
+            <LiveExample code={`<Section padding="xl" className={styles.bgSurface50}>
   <Heading level={3}>Section Title</Heading>
   <Text>Section content with generous XL padding.</Text>
 </Section>`}>
-              <Section padding="xl" style={{ background: '#f8fafc', width: '100%', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
+              <Section padding="xl" className={csx(styles.bgSurface50, styles.wFull, styles.borderSolid, styles.border200, styles.roundedLg)}>
                 <Heading level={3}>Section Title</Heading>
                 <Text>Section content with generous XL padding.</Text>
               </Section>

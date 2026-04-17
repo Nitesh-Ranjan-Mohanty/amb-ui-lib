@@ -10,6 +10,11 @@ export default defineConfig({
       '@amb-ui': path.resolve(__dirname, '../src')
     }
   },
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly'
+    }
+  },
   server: {
     port: 4173
   }

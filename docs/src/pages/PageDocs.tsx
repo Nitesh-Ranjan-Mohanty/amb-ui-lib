@@ -1,5 +1,6 @@
-import { Caption, Heading, Page, Section, Stack, Text } from '@amb-ui';
+import { Caption, Heading, Page, Section, Stack, Text, csx } from '@amb-ui';
 import { PropTable, LiveExample, Note } from '../components/DocComponents';
+import styles from '../../../styles/utils/utils.module.css';
 
 const pageProps = [
   { name: 'fullHeight', type: 'boolean', description: 'Whether the page should take up at least the full viewport height.', default: 'false' },
@@ -46,13 +47,13 @@ function PageDocs() {
   </Page.Footer>
 </Page>`}>
               <div className="embedded-preview">
-                <Page style={{ backgroundColor: 'white' }}>
+                <Page className={styles.bgWhite}>
                   <Page.Header>
                     <Heading level={2}>Dashboard</Heading>
                     <Text size="sm">Welcome back to your overview.</Text>
                   </Page.Header>
                   <Page.Body>
-                    <div style={{ padding: '20px', border: '1px dashed #cbd5e1', borderRadius: '4px', textAlign: 'center' }}>
+                    <div className={csx(styles.p5, styles.borderDashed, styles.border200, styles.roundedLg, styles.textCenter)}>
                        <Text>Main Content Area</Text>
                     </div>
                   </Page.Body>
@@ -83,13 +84,13 @@ function PageDocs() {
   </Page.Body>
 </Page>`}>
               <div className="embedded-preview">
-                <Page style={{ backgroundColor: 'white' }}>
+                <Page className={styles.bgWhite}>
                   <Page.Body>
                     <Section>
                       <Heading level={3}>Profile Info</Heading>
                       <Text size="sm">Your personal details and contact information.</Text>
                     </Section>
-                    <Section style={{ borderTop: '1px solid #e2e8f0' }}>
+                    <Section className={csx(styles.borderTop1, styles.border200)}>
                       <Heading level={3}>Security</Heading>
                       <Text size="sm">Manage your password and authentication methods.</Text>
                     </Section>
@@ -114,7 +115,7 @@ function PageDocs() {
   </Page.Body>
 </Page>`}>
               <div className="embedded-preview" style={{ height: '300px' }}>
-                <Page fullHeight style={{ backgroundColor: '#f8fafc', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Page fullHeight className={csx(styles.bgSurface50, styles.flex, styles.itemsCenter, styles.justifyCenter)}>
                     <Stack align="center" gap="sm">
                       <Heading level={1}>404</Heading>
                       <Text>Page not found</Text>

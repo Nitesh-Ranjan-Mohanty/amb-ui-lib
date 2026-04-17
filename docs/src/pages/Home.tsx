@@ -72,6 +72,23 @@ function App() {
 }`}</code>
             </pre>
           </Section>
+          <Section>
+            <Heading level={2}>Next Steps</Heading>
+            <div className="role-grid">
+              <div className="role-card">
+                <Heading level={4}>Layout Primitives</Heading>
+                <Text size="sm">Explore <code>Stack</code>, <code>Row</code>, and <code>Grid</code> to build your application's structure.</Text>
+              </div>
+              <div className="role-card">
+                <Heading level={4}>Design Tokens</Heading>
+                <Text size="sm">Check out the full list of <code>Colors</code>, <code>Spacing</code>, and <code>Typography</code> tokens.</Text>
+              </div>
+              <div className="role-card">
+                <Heading level={4}>Styling Guide</Heading>
+                <Text size="sm">Learn how to customize and extend the library's visual language.</Text>
+              </div>
+            </div>
+          </Section>
         </Stack>
       </Page.Body>
     </Page>

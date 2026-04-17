@@ -18,5 +18,7 @@ export { default as Section } from './components/Section';
 export { default as Page } from './components/Page';
 export { default as Grid } from './components/Grid';
 export { default as Card } from './components/Card';
+export { default as styles } from '../styles/utils/utils.module.css';
+export { csx } from './csx';
 export * from './tokens/typography';
 export * from './tokens/layout';

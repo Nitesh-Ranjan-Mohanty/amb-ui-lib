@@ -7,13 +7,38 @@ import LayoutDocs from './pages/LayoutDocs';
 import PageDocs from './pages/PageDocs';
 import TypographyDocs from './pages/TypographyDocs';
 import DesignTokens from './pages/DesignTokens';
+import StylingDocs from './pages/StylingDocs';
+import ThemingDocs from './pages/ThemingDocs';
+import DisplayDocs from './pages/DisplayDocs';
+import OverflowDocs from './pages/OverflowDocs';
+import PositionDocs from './pages/PositionDocs';
+import PlacementDocs from './pages/PlacementDocs';
+import ZIndexDocs from './pages/ZIndexDocs';
 import FormDocs from './pages/FormDocs';
+import InstallationDocs from './pages/InstallationDocs';
+import FlexDocs from './pages/FlexDocs';
+import ElevationDocs from './pages/ElevationDocs';
+import WidthDocs from './pages/WidthDocs';
+import OpacityDocs from './pages/OpacityDocs';
+import SpacingDocs from './pages/SpacingDocs';
+import BackgroundDocs from './pages/BackgroundDocs';
+import BorderDocs from './pages/BorderDocs';
 
 const pageMap = {
   home: {
     title: 'Introduction',
     group: 'Getting Started',
     component: Home
+  },
+  installation: {
+    title: 'Installation',
+    group: 'Getting Started',
+    component: InstallationDocs
+  },
+  styling: {
+    title: 'Styling Guide',
+    group: 'Getting Started',
+    component: StylingDocs
   },
   page: {
     title: 'Page',
@@ -45,10 +70,75 @@ const pageMap = {
     group: 'Components',
     component: FormDocs
   },
+  display: {
+    title: 'Display',
+    group: 'Utility Helpers',
+    component: DisplayDocs
+  },
+  overflow: {
+    title: 'Overflow',
+    group: 'Utility Helpers',
+    component: OverflowDocs
+  },
+  position: {
+    title: 'Position',
+    group: 'Utility Helpers',
+    component: PositionDocs
+  },
+  placement: {
+    title: 'Placement',
+    group: 'Utility Helpers',
+    component: PlacementDocs
+  },
+  zindex: {
+    title: 'Z-Index',
+    group: 'Utility Helpers',
+    component: ZIndexDocs
+  },
+  spacing: {
+    title: 'Spacing',
+    group: 'PrimeFlex Reference',
+    component: SpacingDocs
+  },
+  flex: {
+    title: 'Flex',
+    group: 'PrimeFlex Reference',
+    component: FlexDocs
+  },
+  elevation: {
+    title: 'Elevation',
+    group: 'PrimeFlex Reference',
+    component: ElevationDocs
+  },
+  width: {
+    title: 'Width',
+    group: 'PrimeFlex Reference',
+    component: WidthDocs
+  },
+  opacity: {
+    title: 'Opacity',
+    group: 'PrimeFlex Reference',
+    component: OpacityDocs
+  },
+  background: {
+    title: 'Background',
+    group: 'PrimeFlex Reference',
+    component: BackgroundDocs
+  },
+  borders: {
+    title: 'Borders',
+    group: 'PrimeFlex Reference',
+    component: BorderDocs
+  },
   typography: {
     title: 'Typography',
     group: 'Tokens & Primitives',
     component: TypographyDocs
+  },
+  theming: {
+    title: 'Theming',
+    group: 'Tokens & Primitives',
+    component: ThemingDocs
   },
   tokens: {
     title: 'Design Tokens',
@@ -72,7 +162,7 @@ export default function App() {
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
           </svg>
-          @amb/ui-lib
+          amb/ui-lib
         </div>
         
         <nav>
